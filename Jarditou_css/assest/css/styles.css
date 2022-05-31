@@ -1,0 +1,64 @@
+ul {
+    margin:0;
+    background-color: black;
+    height : 70px;
+}
+li  {
+    color: white;    
+    display : inline-block
+    
+}
+a {
+    color: white;
+}
+
+#body {
+    display: flex;
+}
+
+#promo {
+    width: 100%;
+    height: 250px;
+}
+
+#header {
+    display : flex;
+    flex-wrap: nowrap;
+    ;
+}
+#col_one {
+    width : 150%;
+    
+}
+
+#col_two {
+    background-color: grey;
+    width : 50%
+    
+}
+
+p {
+    margin-left: auto;
+    margin-right: auto;
+    font-size : 30px
+}
+
+@media (max-width: 768px) {
+
+    #col_two
+    {
+    
+        display: none;
+    }
+
+    li 
+    {
+        display: flex
+        
+    
+    }
+    body {
+        font-size:1.2rem;
+        }
+
+}
