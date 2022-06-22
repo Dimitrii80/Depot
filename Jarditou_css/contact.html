@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/assest/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
     <div id="header">
@@ -23,15 +23,21 @@
     <form action="http://bienvu.net/script.php" method="post" id="formulaire">
     <fieldset>
         <legend>Vos coordonnées</legend>
-        <label for="nom">Votre nom*:</label><input type="text" name="nom" id="nom" required title="Entrez votre nom (que des caractères entre a et z)"><br>
-        <label for="Prenom">Votre prenom*:</label><input type="text" name="Prenom" id="Prenom" required title="Entrez votre prenom"><br>
+        <label for="nom">Votre nom*:</label><input type="text" name="nom" id="nom" required title="Entrez votre nom ">
+        <span id="missnom"></span><br>
+        <label for="Prenom">Votre prenom*:</label><input type="text" name="Prenom" id="Prenom" required title="Entrez votre prenom">
+        <span id="missPrenom"></span><br>
         <label for="Sexe">Sexe* </label><input type="radio" name="Sexe" id="Sexe" value="Féminin"> Féminin 
         <input type="radio" name="Sexe" value="Masculin"> Masculin <br>
-        <label for="date">Date de naissance*:</label><input type="date" name="ddn" id="date"><br>
-        <label for="postal">Code Postal*:</label><input type="text" name="nom" id="postal" required title="Entrez votre code postal"><br>
+        <span id="misssexe"></span>
+        <label for="date">Date de naissance*: </label><input name="ddn" id="date" required title="Entrez une date valide" >
+        <span id="missdate"></span><br>
+        <label for="postal">Code Postal*:</label><input type="text" name="nom" id="postal" required title="Entrez votre code postal">
+        <span id="misspostal"></span><br>
         <label for="Adresse">Adresse :   </label><input type="text" name="Adresse" id="Adresse"><br>
         <label for="Ville">Ville :</label><input type="text" name="Ville" id="Ville"><br>
-        <label for="Email">Email* :</label><input type="text" name="Email" id="Email" size="50" maxlength="90" value="dave.loper@afpa.fr">
+        <label for="Email">Email* :</label><input type="text" name="Email" id="Email"  required title="Entrez votre mail">
+        <span id="missmail"></span>
     </fieldset>
     <fieldset>
         <legend>Votre demande</legend>
@@ -43,21 +49,35 @@
     <option value="Reclamation">Reclamation</option>
     <option value="Autres">Autres</option>
 </select><br>
-    <label for="Question">Votre question*:</label><textarea name="commentaire" id="Question" rows="2" cols="30"></textarea>
+    
+    <label for="Question">Votre question*:</label><textarea name="commentaire" id="Question" rows="2" cols="30" required title ="votre question"></textarea>
+    <span id="missQuestion"></span>
     </fieldset><br>
-    <input type="checkbox" name="Question" value="?">* J'accepte le traitement informatique de ce formulaire<br>
-    <input type="submit" value="Envoyer" /> <input type="submit" value="Annuler" />
+    <input type="checkbox" id="case" name="checkbox" value="check"  >* J'accepte le traitement informatique de ce formulaire<br>
+    <input type="submit" value="Envoyer" id="bouton_envoi" onclick="if(!this.form.checkbox.checked){alert('Veuillez accepte le traitement informatique de ce formulaire.');return false}"/> 
+    <input type="reset" value="Annuler" />
     <hr>
     </form>
     
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <ul>
         <li><a href="page2.html" title="Mention légales">Mention légales</a></li>
         <li><a href="page2.html" title="Horaires">Horaires</a> </li>
         <li><a href="page2.html" title="Plan du site">Plan du site</a> </li>
     </ul>
     
-
+    <script src="/assets/js/formulaire.js"></script>
 
 </body>
 </html>
